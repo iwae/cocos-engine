@@ -1344,6 +1344,9 @@ cocos_source_files(
                  cocos/renderer/pipeline/custom/NativePipelineTypes.h
                  cocos/renderer/pipeline/custom/NativeRenderGraph.cpp
                  cocos/renderer/pipeline/custom/NativeRenderQueue.cpp
+                 cocos/renderer/pipeline/custom/PrivateFwd.h
+                 cocos/renderer/pipeline/custom/PrivateTypes.cpp
+                 cocos/renderer/pipeline/custom/PrivateTypes.h
                  cocos/renderer/pipeline/custom/RenderCommonFwd.h
                  cocos/renderer/pipeline/custom/RenderCommonJsb.cpp
                  cocos/renderer/pipeline/custom/RenderCommonJsb.h
@@ -3033,12 +3036,14 @@ if(MSVC)
     target_compile_options(${ENGINE_NAME} PUBLIC /MP
         /bigobj
         /wd4018 # signed/unsigned mismatch
+        /wd4221 # no public symbols
         /wd4244 # type conversion data lost
         /wd4267 # conversion from 'size_t' to 'type', possible loss of data
         /wd4305 # truncation from 'type1' to 'type2'
         /wd4309 # truncation of constant value
         /wd4819 # file contains a character that cannot be represented in the current code page
         /wd4996 # deprecated
+        /wd4098 # defaultlib conflicts
         /wd4099 # PDB 'filename' was not found with 'object/library' or at 'path'; linking object as if no debug info
     )
 endif()
